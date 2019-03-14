@@ -1,10 +1,15 @@
 import React from 'react';
 
-function Comment() {
+function Comment(props) {
     return (
+      <div>
         <div>
-
+            {props.username}
         </div>
+        <div>
+            {props.text}
+        </div>
+      </div>    
     );
 }
 
