@@ -16,7 +16,12 @@ function PostContainer(props) {
           </div>
           <p>{props.post.likes} likes</p>
         </div>  
-        <CommentSection comment={props.post.comments} />
+        <CommentSection 
+          comment={props.post.comments} 
+          handleInputChange={props.inputChangeHandler}
+          handleFormSubmit={props.formSubmitHandler}
+          value={props.value}
+        />
       </div>
     );
 }

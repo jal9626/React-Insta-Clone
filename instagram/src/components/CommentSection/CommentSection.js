@@ -11,7 +11,17 @@ function CommentSection(props) {
             <Comment username={comment.username} text={comment.text} key={index} />
             )}
         </div>
-        <input></input>
+        <form onSubmit={props.handleFormSubmit}>
+          <input 
+            type='text' 
+            name='comment'
+            value={props.value}
+            onChange={props.handleInputChange}
+            placeholder='Add a comment...'
+          
+          />
+          <button type='submit'>Post</button>
+        </form>
       </div>  
     );
 }
