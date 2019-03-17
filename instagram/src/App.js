@@ -18,8 +18,7 @@ class App extends Component {
     }
     formSubmitHandler = event => {
       event.preventDefault();
-      let newComment = {  
-          username: 'me',
+      let newComment = { 
           comments: [
             {
               username: 'me',
@@ -27,12 +26,13 @@ class App extends Component {
             }  
           ]
       };
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
           instagram: [...prevState.instagram, newComment],
           comment: '',
         };
       });
+
     };
   
   

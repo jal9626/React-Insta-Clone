@@ -7,8 +7,8 @@ function CommentSection(props) {
       <div>
         <div>
             {console.log(props)}
-            {props.comment.map((comment, index) => 
-            <Comment username={comment.username} text={comment.text} key={index} />
+            {props.comment.map((comment) => 
+            <Comment username={comment.username} text={comment.text} id={comment.id} key={comment.id} />
             )}
         </div>
         <form onSubmit={props.handleFormSubmit}>
@@ -18,7 +18,6 @@ function CommentSection(props) {
             value={props.value}
             onChange={props.handleInputChange}
             placeholder='Add a comment...'
-          
           />
           <button type='submit'>Post</button>
         </form>
