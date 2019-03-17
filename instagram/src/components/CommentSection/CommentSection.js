@@ -6,9 +6,9 @@ function CommentSection(props) {
     return (
       <div>
         <div>
-            {/* {console.log(props)}; */}
-            {props.comment.map(comment => 
-            <Comment username={comment.username} text={comment.text}/>
+            {console.log(props)}
+            {props.comment.map((comment, index) => 
+            <Comment username={comment.username} text={comment.text} key={index} />
             )}
         </div>
         <input></input>

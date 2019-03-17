@@ -4,10 +4,7 @@ function Comment(props) {
     return (
       <div>
         <div>
-            {props.username}
-        </div>
-        <div>
-            {props.text}
+        {props.username} {props.text}
         </div>
       </div>    
     );
