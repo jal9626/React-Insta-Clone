@@ -1,6 +1,14 @@
 
 .thumbnail {
     height: 50px;
-    width: 4%;
+    width: 8%;
     border-radius: 50%;
+}
+
+.postImage {
+    
+}
+
+.postContainer {
+    border: 1px solid grey;
 }

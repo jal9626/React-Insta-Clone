@@ -8,32 +8,15 @@ class App extends Component {
     constructor() {
       super();
       this.state = {
-        instagram: dummyData,
-        comment: ''
+        instagram: []
       };
     }
   
-    inputChangeHandler = event => {
-      this.setState({ [event.target.name]: event.target.value});
+    componentDidMount() {
+      this.setState({ instagram: dummyData })
     }
-    formSubmitHandler = event => {
-      event.preventDefault();
-      let newComment = { 
-          comments: [
-            {
-              username: 'me',
-              text: this.state.comment,
-            }  
-          ]
-      };
-      this.setState((prevState) => {
-        return {
-          instagram: [...prevState.instagram, newComment],
-          comment: '',
-        };
-      });
 
-    };
+    
   
   
   render() {
@@ -42,10 +25,7 @@ class App extends Component {
         <header className="App-header">
           {this.state.instagram.map(post => 
             <PostContainer 
-              post={post} key={post.timestamp} 
-              inputChangeHandler={this.inputChangeHandler}
-              formSubmitHandler={this.formSubmitHandler}
-              value={this.state.comment}
+              post={post} key={post.timestamp}
             />
           )}
           
