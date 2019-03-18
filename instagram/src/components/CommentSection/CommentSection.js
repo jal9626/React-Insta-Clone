@@ -16,9 +16,8 @@ class CommentSection extends Component {
   inputChangeHandler = event => {
     this.setState({ [event.target.name]: event.target.value});
   }
-  formSubmitHandler = (event, id) => {
-    console.log('event is: ', event);
-    console.log('id is: ', id);
+  formSubmitHandler = (event) => {
+    
     
     event.preventDefault();
     let newComment = { 
@@ -28,21 +27,13 @@ class CommentSection extends Component {
             
     };
 
-    this.state.instagram.map(post => {
-      post.id === id ? this.setState(prevState => {
-        return {
-          instagram: [...prevState.instagram.comments, newComment]
-        }
-      })
-       : console.log('no match, post is, id is', post.id, id);
-    });
-
-    // this.setState((prevState ) => {
-    //   return {
-    //     instagram: [...prevState.instagram, newComment],
-    //     comment: '',
-    //   };
-    // });
+    let comments=this.state.comments.slice()
+    comments.push(newComment);
+    
+    this.setState({
+      comments, 
+      comment: ''
+    })
 
   };
   
