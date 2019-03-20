@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 
 import './PostContainer.css';
 import CommentSection from '../CommentSection/CommentSection';
-import SearchBar from '../SearchBar/SearchBar';
+
 
 function PostContainer(props) {
-    return (
+    
+  return (
     <div>
-      <SearchBar 
-        comments={props.post.comments} 
-        inputChangeHandler={props.inputChangeHandler} 
-       />
-     
+      
       <div className='postContainer'>
         <div>
           <div>

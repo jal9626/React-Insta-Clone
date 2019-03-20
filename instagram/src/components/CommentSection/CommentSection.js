@@ -19,6 +19,7 @@ class CommentSection extends Component {
   inputChangeHandler = event => {
     this.setState({ [event.target.name]: event.target.value});
   }
+
   addNewComment = (event) => {
     
     event.preventDefault();
@@ -44,6 +45,8 @@ class CommentSection extends Component {
       };
     });
   }
+
+ 
   
   render() {
   return (
