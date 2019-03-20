@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 
 import './PostContainer.css';
 import CommentSection from '../CommentSection/CommentSection';
+import SearchBar from '../SearchBar/SearchBar';
 
 function PostContainer(props) {
     return (
+    <div>
+      <SearchBar 
+        comments={props.post.comments} 
+        inputChangeHandler={props.inputChangeHandler} 
+       />
+     
       <div className='postContainer'>
         <div>
           <div>
@@ -15,13 +22,16 @@ function PostContainer(props) {
           <div>
             <img className='postImage' src={props.post.imageUrl} alt=''/>
           </div>
-          <p>{props.post.likes} likes</p>
+          
         </div>  
         <CommentSection 
           comments={props.post.comments} 
           post={props.post}
+          likes={props.post.likes}
         />
-      </div>
+
+        </div>
+      </div> 
     );
 }
 

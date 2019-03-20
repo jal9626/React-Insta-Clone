@@ -1,0 +1,21 @@
+
+.thumbnail {
+    height: 50px;
+    width: 8%;
+    border-radius: 50%;
+}
+
+.postImage {
+    
+}
+
+.postContainer {
+    border: 1px solid grey;
+}
+
+.heart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+}
