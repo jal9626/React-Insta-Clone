@@ -4,6 +4,7 @@ import './App.css';
 import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer'; 
 import SearchBar from './components/SearchBar/SearchBar';
+import PostPage from './components/PostContainer/PostPage';
 
 
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
              : this.state.posts
           }
          />
+        <PostPage />
 
         </header>
       </div>

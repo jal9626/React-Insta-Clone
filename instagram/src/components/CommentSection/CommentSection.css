@@ -1,21 +1,24 @@
 
-.thumbnail {
-    height: 50px;
-    width: 8%;
-    border-radius: 50%;
+.commentSection {
+    margin-left: 2%;
+    margin-top: -10px;   
+    margin-bottom: 12px;
 }
 
-.postImage {
-    
-}
-
-.postContainer {
-    border: 1px solid grey;
-}
-
-.heart {
+.heartContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 30%;
+    width: 8%;
+    cursor: pointer;
+    height: 25px;
 }
+
+.likes {
+    height: 10px;
+}
+
+form {
+    margin-top: 5px;
+}
+

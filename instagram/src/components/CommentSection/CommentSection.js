@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faComment } from '@fortawesome/free-solid-svg-icons'
 import Comment from './Comment';
 import './CommentSection.css';
 
@@ -47,13 +51,13 @@ class CommentSection extends Component {
   
   render() {
   return (
-      <div>
+      <div className='commentSection'>
         
-        <div className='heart'>
-          <p onClick={this.likeClick}>heart</p>
-          <p>message bubble</p>
+        <div className='heartContainer'>
+          <p className='heart' onClick={this.likeClick}><FontAwesomeIcon icon={faHeart} /></p>
+          <p><FontAwesomeIcon icon={faComment} /></p>
         </div>
-        <p>{this.state.likes} likes</p>
+        <p className='likes'>{this.state.likes} likes</p>
         
         <div>
             {this.state.comments.map((comment) => 

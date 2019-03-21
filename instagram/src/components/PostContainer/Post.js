@@ -1,7 +1,7 @@
 import React from 'react';  
 import PropTypes from 'prop-types';
 
-import './PostContainer.css';
+import './Post.css';
 import CommentSection from '../CommentSection/CommentSection';
 
 
@@ -11,7 +11,7 @@ function Post(props) {
       {console.log(props)}
       <div className='postContainer'>
         <div>
-          <div>
+          <div className='thumbnailContainer'>
             <img className='thumbnail' src={props.post.thumbnailUrl} alt=''/>
             {props.post.username}
           </div>

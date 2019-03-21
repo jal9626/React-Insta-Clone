@@ -3,6 +3,7 @@
     height: 50px;
     width: 8%;
     border-radius: 50%;
+    margin-left: 2%;
 }
 
 .postImage {
@@ -11,4 +12,10 @@
 
 .postContainer {
     border: 1px solid grey;
+}
+
+.thumbnailContainer {
+    height: 70px;
+    display: flex;
+    align-items: center;
 }
