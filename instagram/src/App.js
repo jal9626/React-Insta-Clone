@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import dummyData from './dummy-data';
-import PostContainer from './components/PostContainer/PostContainer'; 
+// import PostContainer from './components/PostContainer/PostContainer'; 
 import SearchBar from './components/SearchBar/SearchBar';
 import PostPage from './components/PostContainer/PostPage';
 
@@ -15,7 +15,7 @@ class App extends Component {
         filteredPosts: [],
       };
     }
-  
+    
     componentDidMount() {
       this.setState({ posts: dummyData })
     }
@@ -29,7 +29,7 @@ class App extends Component {
       this.setState({ filteredPosts: posts });
     };
 
-
+  
   render() {
     return (
       <div className="App">
@@ -39,15 +39,18 @@ class App extends Component {
             searchPosts={this.searchPostsHandler}
             value={this.state.searchText}
           />
-         <PostContainer 
+         {/* <PostContainer 
            posts={
             this.state.filteredPosts.length > 0
              ? this.state.filteredPosts
              : this.state.posts
           }
-         />
-        <PostPage />
-
+         /> */}
+        <PostPage 
+          posts={this.state.posts}
+          filteredPosts={this.state.filteredPosts}  
+            />
+          {console.log(this.state.posts)}
         </header>
       </div>
     );

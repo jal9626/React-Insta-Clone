@@ -1,8 +1,18 @@
 import React from 'react';
 
-function PostPage() {
+import PostContainer from './PostContainer'; 
+
+
+function PostPage(props) {
+    console.log(props)
     return (
-      <div></div>
+      <div>
+          <PostContainer posts={
+            props.filteredPosts.length > 0
+             ? props.filteredPosts
+             : props.posts.posts
+          }/>
+      </div>
     )
 } 
 
