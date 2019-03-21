@@ -6,16 +6,9 @@ function SearchBar(props)  {
 
     return (
         <div>
-            <form onSubmit={props.searchUserName}>
-                <input
-                  type='text'
-                  name='searchText'
-                  placeholder='search'
-                  value={props.value}
-                  onChange={props.inputChangeHandlerSearch} 
-                />   
-                <button type='submit'>Search</button> 
-            </form>
+            
+            <input type="text" placeholder="Search" onKeyDown={props.searchPosts} />
+         
         </div>
     );
 }

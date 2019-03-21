@@ -10,39 +10,24 @@ class App extends Component {
     constructor() {
       super();
       this.state = {
-        instagram: [],
-        searchText: ''
+        posts: [],
+        filteredPosts: [],
       };
     }
   
     componentDidMount() {
-      this.setState({ instagram: dummyData })
+      this.setState({ posts: dummyData })
     }
 
-    inputChangeHandlerSearch = event => {
-      this.setState({ [event.target.name]: event.target.value});
-    }   
-   
-    searchUsername = event => {
-      event.preventDefault();
-      let newSearchText = {   
-        text: this.state.searchText,      
-      };
-
-      this.setState({
-        instagram,
-        searchText: ''
-      })
-
-      let instagram = this.state.instagram.filter(post => {
-        return !post.username === newSearchText;
-      })
-
-      this.setState({
-        instagram
-      })
-      
+    searchPostsHandler = e => {
+      const posts = this.state.posts.filter(p => {
+        if (p.username.includes(e.target.value)) {
+          return p;
+        }
+      });
+      this.setState({ filteredPosts: posts });
     };
+
 
   render() {
     return (
@@ -50,16 +35,16 @@ class App extends Component {
         <header className="App-header">
           <SearchBar 
             post={this.instagram} 
-            searchUsername={this.searchUsername}
-            inputChangeHandlerSearch={this.inputChangeHandlerSearch}
+            searchPosts={this.searchPostsHandler}
             value={this.state.searchText}
           />
-          {this.state.instagram.map(post => 
-            <PostContainer 
-              post={post} 
-              key={post.timestamp}
-            />
-          )}
+         <PostContainer 
+           posts={
+            this.state.filteredPosts.length > 0
+             ? this.state.filteredPosts
+             : this.state.posts
+          }
+         />
 
         </header>
       </div>

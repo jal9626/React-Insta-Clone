@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Comment from './Comment';
 import './CommentSection.css';
 
@@ -21,7 +19,6 @@ class CommentSection extends Component {
   }
 
   addNewComment = (event) => {
-    
     event.preventDefault();
     let newComment = {   
             username: 'me',
