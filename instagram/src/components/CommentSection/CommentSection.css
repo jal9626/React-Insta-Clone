@@ -1,0 +1,24 @@
+
+.commentSection {
+    margin-left: 2%;
+    margin-top: -10px;   
+    margin-bottom: 12px;
+}
+
+.heartContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 8%;
+    cursor: pointer;
+    height: 25px;
+}
+
+.likes {
+    height: 10px;
+}
+
+form {
+    margin-top: 5px;
+}
+
